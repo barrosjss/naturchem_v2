@@ -13,8 +13,20 @@
 >
 <meta
   name="theme-color"
-  content=""
+  content="#A9C21E"
 >
+
+<!-- Geo / Local SEO — Barranquilla, Colombia -->
+<meta name="geo.region" content="CO-ATL">
+<meta name="geo.placename" content="Barranquilla, Atlántico, Colombia">
+<meta name="geo.position" content="10.9639;-74.7964">
+<meta name="ICBM" content="10.9639, -74.7964">
+<meta name="language" content="es-CO">
+
+<!-- Preconnect performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.shopify.com">
 
 {%- liquid
   assign og_title = page_title | default: shop.name
@@ -108,14 +120,95 @@
   {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
 </title>
 
-<link
-  rel="canonical"
-  href="{{ canonical_url }}"
->
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="alternate" hreflang="es-CO" href="{{ canonical_url }}">
 
 {% if page_description %}
-  <meta
-    name="description"
-    content="{{ page_description | escape }}"
-  >
+  <meta name="description" content="{{ page_description | escape }}">
 {% endif %}
+
+<!-- JSON-LD: LocalBusiness / Store -->
+{%- unless request.page_type == 'password' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Store",
+      "@id": "{{ shop.url }}/#store",
+      "name": "{{ shop.name | escape }}",
+      "description": "{{ shop.description | default: 'Distribuidor de materias primas naturales y químicas en Barranquilla, Colombia. Ceras, glicerina, ingredientes para jabones, velas y cremas artesanales.' | escape }}",
+      "url": "{{ shop.url }}",
+      "logo": "{{ settings.logo | image_url: width: 300 }}",
+      "image": "{{ settings.logo | image_url: width: 600 }}",
+      "telephone": "+573004986307",
+      "email": "gerente@naturchemcolombia.com",
+      "currenciesAccepted": "COP",
+      "paymentAccepted": "Cash, Credit Card, Mercado Pago",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barranquilla",
+        "addressRegion": "Atlántico",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.9639",
+        "longitude": "-74.7964"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "sameAs": [
+        "https://www.instagram.com/naturchemcolombia",
+        "https://wa.me/573004986307"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ shop.url }}/#website",
+      "url": "{{ shop.url }}",
+      "name": "{{ shop.name | escape }}",
+      "inLanguage": "es-CO",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    {%- if request.page_type == 'product' -%}
+    ,{
+      "@type": "Product",
+      "@id": "{{ shop.url }}/products/{{ product.handle }}#product",
+      "name": "{{ product.title | escape }}",
+      "description": "{{ product.description | strip_html | escape | truncate: 300 }}",
+      "url": "{{ shop.url }}/products/{{ product.handle }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "Naturchem"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "COP",
+        "price": "{{ product.price | money_without_currency | remove: ',' }}",
+        "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "url": "{{ shop.url }}/products/{{ product.handle }}",
+        "seller": {
+          "@type": "Organization",
+          "name": "Naturchem"
+        }
+      }
+      {%- if product.featured_image -%}
+      ,"image": "{{ product.featured_image | image_url: width: 800 }}"
+      {%- endif -%}
+    }
+    {%- endif -%}
+  ]
+}
+</script>
+{%- endunless -%}
