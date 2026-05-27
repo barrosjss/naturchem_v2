@@ -6,19 +6,24 @@ Guía para editar el tema Shopify de Naturchem localmente y mantener backup en g
 
 ## Setup inicial (una sola vez)
 
-### 1. Autenticar Shopify CLI
+### Credenciales (guardar en `.env`, nunca en git)
 
-```bash
-shopify auth login --store naturchem.myshopify.com
+```
+SHOPIFY_STORE=rgk1v1-rh.myshopify.com
+SHOPIFY_THEME_ID=184567857441
+SHOPIFY_PASSWORD=shptka_...  # ver .env local o pedir nueva via Theme Access app
 ```
 
-> Reemplazar con el store handle real una vez creada la tienda.
+> Token generado via **Theme Access** app (Apps → Theme Access). Expira en 7 días si no se usa.
 
-### 2. Clonar tema activo a este repo
+### 1. Pull tema
 
 ```bash
-cd /Users/jesusbarros/Documents/GitHub/naturchem_v2
-shopify theme pull --store naturchem.myshopify.com --path ./web/theme
+shopify theme pull \
+  --store rgk1v1-rh.myshopify.com \
+  --password shptka_... \
+  --theme 184567857441 \
+  --path web/theme
 ```
 
 Esto crea `web/theme/` con todos los archivos `.liquid`, `assets/`, `config/`, etc.
@@ -37,8 +42,11 @@ git commit -m "feat: backup inicial tema Shopify"
 ### Modo desarrollo en vivo
 
 ```bash
-cd web/theme
-shopify theme dev --store naturchem.myshopify.com
+shopify theme dev \
+  --store rgk1v1-rh.myshopify.com \
+  --password shptka_... \
+  --theme 184567857441 \
+  --path web/theme
 ```
 
 Abre preview en browser con hot-reload. Cambios en `.liquid` se reflejan al guardar.
@@ -46,7 +54,11 @@ Abre preview en browser con hot-reload. Cambios en `.liquid` se reflejan al guar
 ### Subir cambios al store
 
 ```bash
-shopify theme push --store naturchem.myshopify.com
+shopify theme push \
+  --store rgk1v1-rh.myshopify.com \
+  --password shptka_... \
+  --theme 184567857441 \
+  --path web/theme
 ```
 
 ### Guardar backup en git después de cada sesión
