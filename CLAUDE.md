@@ -32,6 +32,9 @@ Naturchem es una empresa distribuidora de **materias primas naturales y química
 | `content/strategy.md` | Estrategia de contenido |
 | `content/calendar-feb-mar-2026.md` | Calendario de contenido de referencia |
 | `reports/` | Reportes HTML y propuestas comerciales |
+| `web/design-spec.md` | Especificación de diseño visual (paleta, tipografía, wireframes) |
+| `web/shopify-workflow.md` | CLI setup, backup y workflow de desarrollo del tema |
+| `web/theme/` | Código del tema Shopify (Liquid) — backup via CLI |
 
 ---
 
