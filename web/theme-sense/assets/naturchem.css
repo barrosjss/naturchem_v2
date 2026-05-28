@@ -381,22 +381,21 @@ footer {
 }
 
 .naturchem-logo {
-  height: 28px !important;
-  width: auto !important;
-  max-width: 150px !important;
-  max-height: 28px !important;
+  height: 36px !important;
+  width: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
   object-fit: contain;
-  object-position: left center;
   display: block;
-  vertical-align: middle;
   transition: opacity var(--nat-transition);
 }
 
 @media (min-width: 750px) {
   .naturchem-logo {
-    height: 32px !important;
-    max-height: 32px !important;
-    max-width: 170px !important;
+    height: 40px !important;
+    width: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
   }
 }
 
