@@ -1,0 +1,367 @@
+/* =============================================================
+   NATURCHEM — Brand Override CSS
+   Store: rgk1v1-rh.myshopify.com | Theme: Horizon
+   ============================================================= */
+
+/* ── Brand tokens ─────────────────────────────────────────── */
+:root {
+  --nat-lime:        #A9C21E;
+  --nat-lime-dark:   #7A9015;
+  --nat-lime-light:  #C8DC5A;
+  --nat-green:       #1C3A0E;
+  --nat-green-deep:  #142B09;
+  --nat-cream:       #F4F1E8;
+  --nat-cream-dark:  #E8E3D5;
+  --nat-earth:       #5C3317;
+  --nat-earth-light: #8B5A3C;
+  --nat-text:        #1C2B18;
+  --nat-text-muted:  rgba(28,43,24,0.65);
+
+  --nat-radius-sm:   6px;
+  --nat-radius-md:   12px;
+  --nat-radius-lg:   20px;
+  --nat-radius-pill: 100px;
+
+  --nat-shadow-sm:   0 2px 8px rgba(28,58,14,0.08);
+  --nat-shadow-md:   0 6px 24px rgba(28,58,14,0.12);
+  --nat-shadow-lg:   0 16px 48px rgba(28,58,14,0.16);
+  --nat-shadow-lime: 0 4px 20px rgba(169,194,30,0.35);
+
+  --nat-transition:  0.22s cubic-bezier(0.33,1,0.68,1);
+  --nat-transition-slow: 0.38s cubic-bezier(0.33,1,0.68,1);
+}
+
+/* ── Typography ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--nat-text);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ── Primary button — lime green ──────────────────────────── */
+.button--primary,
+[class*="button"][class*="primary"],
+.btn-primary {
+  background: var(--nat-lime);
+  color: var(--nat-green-deep);
+  border-color: var(--nat-lime);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: var(--nat-shadow-lime);
+  transition:
+    background var(--nat-transition),
+    transform var(--nat-transition),
+    box-shadow var(--nat-transition);
+}
+
+.button--primary:hover,
+[class*="button"][class*="primary"]:hover {
+  background: var(--nat-lime-dark);
+  border-color: var(--nat-lime-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(169,194,30,0.45);
+}
+
+.button--primary:active,
+[class*="button"][class*="primary"]:active {
+  transform: translateY(0);
+  box-shadow: var(--nat-shadow-lime);
+}
+
+/* ── Secondary button ─────────────────────────────────────── */
+.button--secondary,
+[class*="button"][class*="secondary"] {
+  border-color: var(--nat-green);
+  color: var(--nat-green);
+  font-weight: 600;
+  transition:
+    background var(--nat-transition),
+    color var(--nat-transition),
+    transform var(--nat-transition);
+}
+
+.button--secondary:hover,
+[class*="button"][class*="secondary"]:hover {
+  background: var(--nat-green);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ── Product cards ────────────────────────────────────────── */
+.card-wrapper,
+product-card,
+[class*="product-card"] {
+  transition:
+    transform var(--nat-transition),
+    box-shadow var(--nat-transition);
+}
+
+.card-wrapper:hover,
+product-card:hover,
+[class*="product-card"]:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--nat-shadow-md);
+}
+
+/* Card image zoom */
+.card-wrapper .card__media img,
+.card-wrapper .media img,
+product-card img {
+  transition: transform var(--nat-transition-slow);
+}
+
+.card-wrapper:hover .card__media img,
+.card-wrapper:hover .media img,
+product-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Card media overflow clip */
+.card-wrapper .card__media,
+.card-wrapper .media {
+  overflow: hidden;
+  border-radius: var(--nat-radius-md);
+}
+
+/* ── Badges ───────────────────────────────────────────────── */
+.badge {
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--nat-radius-pill);
+}
+
+/* "Más vendido" → lime */
+.badge--sale,
+[class*="badge"][class*="sale"] {
+  background: var(--nat-lime) !important;
+  color: var(--nat-green-deep) !important;
+}
+
+/* ── Section spacing ──────────────────────────────────────── */
+.shopify-section + .shopify-section {
+  margin-top: 0;
+}
+
+/* ── Hero section ─────────────────────────────────────────── */
+.section--hero,
+[class*="hero"] .section__content {
+  position: relative;
+}
+
+/* ── Collection cards ─────────────────────────────────────── */
+[class*="collection-card"] {
+  overflow: hidden;
+  border-radius: var(--nat-radius-lg);
+}
+
+[class*="collection-card"]:hover img {
+  transform: scale(1.06);
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+header-component,
+.header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Price styles ─────────────────────────────────────────── */
+.price--sale .price__regular,
+[class*="price--on-sale"] .price__regular {
+  color: var(--nat-text-muted);
+  font-size: 0.85em;
+}
+
+.price--sale .price__sale,
+[class*="price--on-sale"] .price__sale {
+  color: var(--nat-earth);
+  font-weight: 700;
+}
+
+/* ── Inputs & search ──────────────────────────────────────── */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--nat-lime);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar (webkit) ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nat-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nat-lime);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nat-lime-dark);
+}
+
+/* ── WhatsApp sticky CTA (mobile) ────────────────────────── */
+.naturchem-whatsapp-cta {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 9999;
+  background: #25D366;
+  color: #fff;
+  border-radius: var(--nat-radius-pill);
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  align-items: center;
+  gap: 8px;
+  transition: transform var(--nat-transition), box-shadow var(--nat-transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.naturchem-whatsapp-cta svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.naturchem-whatsapp-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .naturchem-whatsapp-cta {
+    display: flex;
+  }
+}
+
+/* ── Section animations on scroll ────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .shopify-section {
+    animation: natFadeUp 0.6s var(--nat-transition-slow) both;
+    animation-play-state: paused;
+  }
+
+  .shopify-section.is-visible {
+    animation-play-state: running;
+  }
+}
+
+@keyframes natFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Product page ─────────────────────────────────────────── */
+.product__info-container .price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--nat-green);
+}
+
+/* Add to cart button on product page */
+.product-form__cart-submit {
+  background: var(--nat-lime) !important;
+  color: var(--nat-green-deep) !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  letter-spacing: -0.01em !important;
+  border-radius: var(--nat-radius-pill) !important;
+  min-height: 52px !important;
+  box-shadow: var(--nat-shadow-lime) !important;
+  transition:
+    background var(--nat-transition),
+    transform var(--nat-transition),
+    box-shadow var(--nat-transition) !important;
+}
+
+.product-form__cart-submit:hover {
+  background: var(--nat-lime-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px rgba(169,194,30,0.5) !important;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--nat-cream-dark);
+}
+
+/* ── Utility: natural section bg ─────────────────────────── */
+.section-bg-cream {
+  background: var(--nat-cream);
+}
+
+.section-bg-green {
+  background: var(--nat-green);
+  color: #fff;
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.naturchem-logo {
+  height: 36px !important;
+  width: auto !important;
+  max-width: 220px !important;
+  max-height: 36px !important;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  transition: opacity var(--nat-transition);
+}
+
+@media (min-width: 750px) {
+  .naturchem-logo {
+    height: 44px !important;
+    max-height: 44px !important;
+    max-width: 280px !important;
+  }
+}
+
+/* White logo shows on transparent/dark headers */
+.header-logo__image-container--inverse {
+  display: none;
+}
+
+header-component[transparent] .header-logo__image-container--original {
+  display: none;
+}
+
+header-component[transparent] .header-logo__image-container--inverse {
+  display: block;
+}
+
+/* ── Mobile nav ───────────────────────────────────────────── */
+@media (max-width: 750px) {
+  .header__heading-logo {
+    max-height: 44px;
+  }
+
+  .product-form__cart-submit {
+    min-height: 56px !important;
+    font-size: 1.05rem !important;
+  }
+}
