@@ -53,29 +53,29 @@
     class="header-logo__image-container header-logo__image-container--original"
     data-testid="header-logo"
   >
-    {% render 'image',
-      image: settings.logo,
-      class: 'header-logo__image',
-      height: settings.logo_height,
-      text_fallback: shop.name,
-      style: logo_style
-    %}
+    <img
+      src="{{ 'naturchem-logo.svg' | asset_url }}"
+      alt="{{ shop.name }}"
+      class="header-logo__image naturchem-logo naturchem-logo--color"
+      height="{{ settings.logo_height }}"
+      loading="eager"
+      fetchpriority="high"
+    >
   </span>
 
-  {% if use_inverse_logo %}
-    <span
-      class="header-logo__image-container header-logo__image-container--inverse"
-      data-testid="header-logo-inverse"
+  <span
+    class="header-logo__image-container header-logo__image-container--inverse"
+    data-testid="header-logo-inverse"
+  >
+    <img
+      src="{{ 'naturchem-logo-white.svg' | asset_url }}"
+      alt="{{ shop.name }}"
+      class="header-logo__image naturchem-logo naturchem-logo--white"
+      height="{{ settings.logo_height }}"
+      loading="eager"
+      fetchpriority="high"
     >
-      {% render 'image',
-        image: inverse_logo,
-        class: 'header-logo__image',
-        height: settings.logo_height,
-        text_fallback: shop.name,
-        style: inverse_logo_style
-      %}
-    </span>
-  {% endif %}
+  </span>
 </a>
 
 {% stylesheet %}

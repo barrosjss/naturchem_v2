@@ -321,6 +321,34 @@ footer {
   color: #fff;
 }
 
+/* ── Logo ─────────────────────────────────────────────────── */
+.naturchem-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  transition: opacity var(--nat-transition);
+}
+
+@media (min-width: 750px) {
+  .naturchem-logo {
+    height: 44px;
+  }
+}
+
+/* White logo shows on transparent/dark headers */
+.header-logo__image-container--inverse {
+  display: none;
+}
+
+header-component[transparent] .header-logo__image-container--original {
+  display: none;
+}
+
+header-component[transparent] .header-logo__image-container--inverse {
+  display: block;
+}
+
 /* ── Mobile nav ───────────────────────────────────────────── */
 @media (max-width: 750px) {
   .header__heading-logo {
