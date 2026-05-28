@@ -176,6 +176,23 @@ header-component,
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* Logo + nav tight together on the left */
+@media screen and (min-width: 990px) {
+  .header--middle-left {
+    grid-template-columns: auto auto 1fr !important;
+    column-gap: 0.5rem !important;
+  }
+
+  .header--middle-left .header__inline-menu {
+    margin-left: 0.5rem !important;
+  }
+
+  .header--middle-left .header__menu-item {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+}
+
 /* ── Price styles ─────────────────────────────────────────── */
 .price--sale .price__regular,
 [class*="price--on-sale"] .price__regular {
