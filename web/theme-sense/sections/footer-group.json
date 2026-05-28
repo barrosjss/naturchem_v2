@@ -17,14 +17,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Subscribe to our emails",
+            "heading": "Recibe novedades y ofertas",
             "heading_size": "h1"
           }
         },
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Join our email list for exclusive offers and the latest news. </p>"
+            "text": "<p>Suscríbete y sé el primero en conocer nuevos productos, precios especiales y consejos para tus creaciones artesanales.</p>"
           }
         },
         "email-form": {
@@ -38,7 +38,7 @@
         "email-form"
       ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-3",
         "full_width": true,
         "padding_top": 44,
         "padding_bottom": 8
@@ -47,7 +47,7 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-3",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,

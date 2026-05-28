@@ -308,7 +308,26 @@ select:focus {
 
 /* ── Footer ───────────────────────────────────────────────── */
 footer {
-  border-top: 1px solid var(--nat-cream-dark);
+  border-top: none;
+}
+
+/* Newsletter input legible on dark green bg */
+.color-scheme-3 .field__input,
+.color-scheme-3 input[type="email"] {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.color-scheme-3 .field__input::placeholder,
+.color-scheme-3 input[type="email"]::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.color-scheme-3 .newsletter-form__button {
+  background: var(--nat-lime);
+  color: var(--nat-green-deep);
+  border-color: var(--nat-lime);
 }
 
 /* ── Utility: natural section bg ─────────────────────────── */
