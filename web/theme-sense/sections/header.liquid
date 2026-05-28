@@ -97,15 +97,17 @@
     margin-left: 0 !important;
   }
   .nat-header-left .header__inline-menu {
-    display: block !important;
     margin-left: 0 !important;
   }
-  .nat-header-left .header__menu-item,
-  .nat-header-left .list-menu__item {
-    padding-left: 0.6rem !important;
-    padding-right: 0.6rem !important;
-  }
   @media screen and (min-width: 990px) {
+    .nat-header-left .header__inline-menu {
+      display: block !important;
+    }
+    .nat-header-left .header__menu-item,
+    .nat-header-left .list-menu__item {
+      padding-left: 0.6rem !important;
+      padding-right: 0.6rem !important;
+    }
     .header--middle-left {
       grid-template-areas: 'heading icons' !important;
       grid-template-columns: auto 1fr !important;
