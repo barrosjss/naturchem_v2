@@ -82,34 +82,31 @@
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .nat-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    grid-area: heading;
+  }
+  .nat-header-left .header__heading {
+    margin: 0;
+    line-height: 0;
+  }
+  .nat-header-left .header__heading-link {
+    padding-right: 0;
+    margin-left: -0.75rem;
+  }
+  .nat-header-left .header__inline-menu {
+    display: block;
+    margin-left: 0;
+  }
   @media screen and (min-width: 990px) {
     .header--middle-left {
-      display: flex;
-      align-items: center;
-    }
-    .header--middle-left .header__heading,
-    .header--middle-left .header__heading-link {
-      flex: 0 0 auto;
-    }
-    .header--middle-left .header__heading-link {
-      padding-right: 0;
-      margin-left: -0.75rem;
-    }
-    .header--middle-left .header__inline-menu {
-      flex: 0 0 auto;
-      display: block;
-      margin-left: 0.5rem;
+      grid-template-areas: 'heading icons';
+      grid-template-columns: auto 1fr;
     }
     .header--middle-left .header__icons {
-      flex: 1 1 auto;
-      display: flex;
-      justify-content: flex-end;
-      margin-left: auto;
-      padding-right: 0;
-    }
-    .header--middle-left .header__menu-item {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
+      justify-self: end;
     }
   }
 
@@ -169,37 +166,39 @@
       endif
     -%}
 
-    {%- if section.settings.logo_position != 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
+    <div class="nat-header-left" style="grid-area: heading; display: flex; align-items: center; gap: 0;">
+      {%- if section.settings.logo_position != 'middle-center' -%}
+        {%- if request.page_type == 'index' -%}
+          <h1 class="header__heading" style="margin: 0;">
+        {%- endif -%}
+            <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset" style="padding-right: 0;">
+              <div class="header__heading-logo-wrapper naturchem-logo-wrapper">
+                <img
+                  src="{{ 'naturchem-logo.svg' | asset_url }}"
+                  alt="{{ shop.name }}"
+                  class="header__heading-logo naturchem-logo naturchem-logo--color motion-reduce"
+                  width="150"
+                  height="28"
+                  loading="eager"
+                  fetchpriority="high"
+                >
+              </div>
+            </a>
+        {%- if request.page_type == 'index' -%}
+          </h1>
+        {%- endif -%}
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            <div class="header__heading-logo-wrapper naturchem-logo-wrapper">
-              <img
-                src="{{ 'naturchem-logo.svg' | asset_url }}"
-                alt="{{ shop.name }}"
-                class="header__heading-logo naturchem-logo naturchem-logo--color motion-reduce"
-                width="150"
-                height="28"
-                loading="eager"
-                fetchpriority="high"
-              >
-            </div>
-          </a>
-      {%- if request.page_type == 'index' -%}
-        </h1>
-      {%- endif -%}
-    {%- endif -%}
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
+      {%- liquid
+        if section.settings.menu != blank
+          if section.settings.menu_type_desktop == 'dropdown'
+            render 'header-dropdown-menu'
+          elsif section.settings.menu_type_desktop != 'drawer'
+            render 'header-mega-menu'
+          endif
         endif
-      endif
-    %}
+      %}
+    </div>
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
