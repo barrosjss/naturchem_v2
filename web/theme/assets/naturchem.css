@@ -323,16 +323,21 @@ footer {
 
 /* ── Logo ─────────────────────────────────────────────────── */
 .naturchem-logo {
-  height: 36px;
-  width: auto;
+  height: 36px !important;
+  width: auto !important;
+  max-width: 220px !important;
+  max-height: 36px !important;
   object-fit: contain;
   object-position: left center;
+  display: block;
   transition: opacity var(--nat-transition);
 }
 
 @media (min-width: 750px) {
   .naturchem-logo {
-    height: 44px;
+    height: 44px !important;
+    max-height: 44px !important;
+    max-width: 280px !important;
   }
 }
 
