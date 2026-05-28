@@ -11,7 +11,7 @@
   "current": "Sense",
   "presets": {
     "Sense": {
-      "logo_width": 220,
+      "logo_width": 150,
       "color_schemes": {
         "scheme-1": {
           "settings": {

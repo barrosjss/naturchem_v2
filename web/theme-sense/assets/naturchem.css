@@ -341,22 +341,29 @@ footer {
 }
 
 /* ── Logo ─────────────────────────────────────────────────── */
+.naturchem-logo-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+
 .naturchem-logo {
-  height: 36px !important;
+  height: 28px !important;
   width: auto !important;
-  max-width: 220px !important;
-  max-height: 36px !important;
+  max-width: 150px !important;
+  max-height: 28px !important;
   object-fit: contain;
   object-position: left center;
   display: block;
+  vertical-align: middle;
   transition: opacity var(--nat-transition);
 }
 
 @media (min-width: 750px) {
   .naturchem-logo {
-    height: 44px !important;
-    max-height: 44px !important;
-    max-width: 280px !important;
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 170px !important;
   }
 }
 
