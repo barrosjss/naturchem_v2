@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Materias primas para tus creaciones",
             "heading_size": "h1"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Shop now",
+            "button_label": "Ver catálogo",
             "button_link": "shopify://collections/all",
             "button_style_secondary": false
           }
@@ -50,7 +50,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Productos destacados",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
