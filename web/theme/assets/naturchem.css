@@ -256,6 +256,41 @@ select:focus {
 
 /* scroll animations removed */
 
+/* ── Footer — ocultar "Tecnología de Shopify", centrar copyright ─ */
+.powered-by-link,
+a[href*="shopify.com/"],
+.footer__copyright a[href*="shopify.com"] {
+  display: none !important;
+}
+
+.footer__copyright,
+.footer__copyright-content,
+[class*="footer-copyright"],
+.footer .copyright {
+  display: block;
+  text-align: center !important;
+  width: 100%;
+}
+
+/* Policies list: centradas arriba, copyright centrado abajo */
+.footer__policies,
+[class*="footer-policy"],
+.footer .policy-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  text-align: center;
+  width: 100%;
+}
+
+/* ── Contact form section — reduce top gap ────────────────── */
+.template-page-contact .shopify-section:has([class*="contact-form"]),
+.template-page-contact .shopify-section ~ .shopify-section {
+  padding-top: 0 !important;
+  margin-top: -24px;
+}
+
 /* ── Product page ─────────────────────────────────────────── */
 .product__info-container .price {
   font-size: 1.5rem;
