@@ -256,32 +256,33 @@ select:focus {
 
 /* scroll animations removed */
 
-/* ── Footer — ocultar "Tecnología de Shopify", centrar copyright ─ */
-.powered-by-link,
-a[href*="shopify.com/"],
-.footer__copyright a[href*="shopify.com"] {
+/* ── Footer — ocultar "Tecnología de Shopify" ─────────────── */
+.copyright__content:has(a[href*="poweredby"]) {
   display: none !important;
 }
 
-.footer__copyright,
-.footer__copyright-content,
-[class*="footer-copyright"],
-.footer .copyright {
-  display: block;
+/* Policies arriba centradas, © copyright abajo centrado */
+.footer__copyright {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
   text-align: center !important;
-  width: 100%;
+  width: 100% !important;
 }
 
-/* Policies list: centradas arriba, copyright centrado abajo */
-.footer__policies,
-[class*="footer-policy"],
-.footer .policy-list {
-  display: flex;
-  justify-content: center;
+.footer__copyright .policies {
+  order: 1;
+  display: flex !important;
   flex-wrap: wrap;
-  gap: 4px 16px;
-  text-align: center;
-  width: 100%;
+  justify-content: center;
+  gap: 4px 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__copyright > .copyright__content:first-child {
+  order: 2;
 }
 
 /* ── Contact form section — reduce top gap ────────────────── */
