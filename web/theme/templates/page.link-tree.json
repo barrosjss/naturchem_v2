@@ -1,0 +1,77 @@
+{
+  "sections": {
+    "link_tree": {
+      "type": "link-tree",
+      "blocks": {
+        "link_catalogo": {
+          "type": "link",
+          "settings": {
+            "active": true,
+            "icon": "🛒",
+            "label": "Ver catálogo completo",
+            "url": "\/collections\/all",
+            "new_tab": false
+          }
+        },
+        "link_whatsapp": {
+          "type": "link",
+          "settings": {
+            "active": true,
+            "icon": "💬",
+            "label": "Escríbenos por WhatsApp",
+            "url": "https:\/\/wa.me\/573004986307",
+            "new_tab": true
+          }
+        },
+        "link_instagram": {
+          "type": "link",
+          "settings": {
+            "active": true,
+            "icon": "📸",
+            "label": "Síguenos en Instagram",
+            "url": "https:\/\/instagram.com\/naturchem",
+            "new_tab": true
+          }
+        },
+        "link_contacto": {
+          "type": "link",
+          "settings": {
+            "active": true,
+            "icon": "📩",
+            "label": "Contáctanos",
+            "url": "\/pages\/contacto",
+            "new_tab": false
+          }
+        },
+        "link_sobre": {
+          "type": "link",
+          "settings": {
+            "active": true,
+            "icon": "🌿",
+            "label": "Quiénes somos",
+            "url": "\/pages\/sobre-nosotros",
+            "new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "link_catalogo",
+        "link_whatsapp",
+        "link_instagram",
+        "link_contacto",
+        "link_sobre"
+      ],
+      "settings": {
+        "name": "Naturchem Colombia",
+        "bio": "Materias primas naturales y químicas para tus creaciones artesanales. 📦 Envíos a toda Colombia.",
+        "bg_color": "#1C2B1A",
+        "text_color": "#F5F0E8",
+        "accent_color": "#C4A45E",
+        "button_bg": "#2D5A27",
+        "button_text": "#F5F0E8",
+        "show_footer": true
+      }
+    }
+  },
+  "order": ["link_tree"]
+}

@@ -1,0 +1,301 @@
+<style>
+  .nc-linktree {
+    min-height: 100vh;
+    background-color: {{ section.settings.bg_color }};
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 48px 20px 80px;
+    box-sizing: border-box;
+  }
+
+  .nc-linktree__inner {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nc-linktree__avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid {{ section.settings.accent_color }};
+    margin-bottom: 4px;
+  }
+
+  .nc-linktree__avatar-placeholder {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: {{ section.settings.accent_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 4px;
+  }
+
+  .nc-linktree__name {
+    color: {{ section.settings.text_color }};
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+  }
+
+  .nc-linktree__bio {
+    color: {{ section.settings.text_color }};
+    font-size: 14px;
+    opacity: 0.8;
+    text-align: center;
+    margin: 0 0 8px;
+    line-height: 1.5;
+    max-width: 380px;
+  }
+
+  .nc-linktree__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .nc-linktree__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text }};
+    border-radius: 12px;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: opacity 0.15s, transform 0.15s;
+    border: 1px solid rgba(255,255,255,0.12);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nc-linktree__link:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    text-decoration: none;
+    color: {{ section.settings.button_text }};
+  }
+
+  .nc-linktree__link-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+  }
+
+  .nc-linktree__link-label {
+    flex: 1;
+    text-align: center;
+  }
+
+  .nc-linktree__footer {
+    margin-top: 24px;
+    color: {{ section.settings.text_color }};
+    font-size: 12px;
+    opacity: 0.5;
+    text-align: center;
+  }
+</style>
+
+<div class="nc-linktree">
+  <div class="nc-linktree__inner">
+
+    {% if section.settings.avatar != blank %}
+      <img
+        src="{{ section.settings.avatar | image_url: width: 176 }}"
+        class="nc-linktree__avatar"
+        alt="{{ section.settings.name }}"
+        width="88"
+        height="88"
+      >
+    {% else %}
+      <div class="nc-linktree__avatar-placeholder">🌿</div>
+    {% endif %}
+
+    <h1 class="nc-linktree__name">{{ section.settings.name }}</h1>
+
+    {% if section.settings.bio != blank %}
+      <p class="nc-linktree__bio">{{ section.settings.bio }}</p>
+    {% endif %}
+
+    <div class="nc-linktree__links">
+      {% for block in section.blocks %}
+        {% if block.settings.active %}
+          <a
+            href="{{ block.settings.url }}"
+            class="nc-linktree__link"
+            {% if block.settings.new_tab %}target="_blank" rel="noopener"{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.icon != blank %}
+              <span class="nc-linktree__link-icon">{{ block.settings.icon }}</span>
+            {% endif %}
+            <span class="nc-linktree__link-label">{{ block.settings.label }}</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_footer %}
+      <p class="nc-linktree__footer">© {{ 'now' | date: '%Y' }} Naturchem Colombia · Barranquilla</p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Link Tree",
+  "tag": "section",
+  "class": "nc-linktree-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Perfil"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar",
+      "label": "Foto / Logo"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Nombre",
+      "default": "Naturchem Colombia"
+    },
+    {
+      "type": "textarea",
+      "id": "bio",
+      "label": "Descripción corta",
+      "default": "Materias primas naturales y químicas para tus creaciones artesanales. 📦 Envíos a toda Colombia."
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fondo",
+      "default": "#1C2B1A"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texto",
+      "default": "#F5F0E8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Acento",
+      "default": "#C4A45E"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fondo botones",
+      "default": "#2D5A27"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Texto botones",
+      "default": "#F5F0E8"
+    },
+    {
+      "type": "header",
+      "content": "Opciones"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_footer",
+      "label": "Mostrar pie de página",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Enlace",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "active",
+          "label": "Visible",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji / Ícono",
+          "default": "🔗"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Texto del botón",
+          "default": "Mi enlace"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "new_tab",
+          "label": "Abrir en nueva pestaña",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Link Tree",
+      "blocks": [
+        {
+          "type": "link",
+          "settings": {
+            "icon": "🛒",
+            "label": "Ver catálogo completo",
+            "active": true
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "icon": "📱",
+            "label": "WhatsApp",
+            "active": true
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "icon": "📸",
+            "label": "Instagram",
+            "active": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
