@@ -26,6 +26,7 @@ Naturchem es una empresa distribuidora de **materias primas naturales y química
 | `decisions/_template.md` | Plantilla para nuevas decisiones |
 | `decisions/2026-01-21-digital-expansion.md` | Decisión: expansión digital integral |
 | `decisions/2026-05-22-shopify-ecommerce.md` | Decisión: Shopify como canal ecommerce principal |
+| `decisions/2026-06-18-shopify-api-catalogo.md` | Decisión: carga masiva del catálogo vía API |
 | `stack/overview.md` | Mapa completo del stack tecnológico |
 | `stack/google-workspace.md` | Cómo se usa Google Suite en Naturchem |
 | `stack/shopify.md` | Setup y estrategia Shopify |
@@ -38,14 +39,17 @@ Naturchem es una empresa distribuidora de **materias primas naturales y química
 
 ---
 
-## Estado actual del negocio (Mayo 2026)
+## Estado actual del negocio (Junio 2026)
 
-- Ecommerce: **en construcción con Shopify** — decisión tomada, implementación en progreso
+- Ecommerce: **tienda activa** en `naturchemcolombia.com` (Shopify)
+- **564 productos cargados y publicados** — precios e imágenes pendientes
+- Gestión de catálogo: vía Shopify Admin API (app "Agente Claude" en Partners)
 - Presencia digital activa: Instagram (carruseles, reels, stories)
 - Herramientas de contenido: Figma (diseño) + Google Drive (videos)
 - Publicidad: Google Ads planificado como próximo paso
 - Línea nueva: **"Vitality"** — en proceso de lanzamiento y distribución en la Costa
 - Alianzas: gimnasios en Barranquilla para activaciones
+- **Pendiente del cliente:** pasarela de pagos (Wompi), política de envíos, precios
 
 ---
 

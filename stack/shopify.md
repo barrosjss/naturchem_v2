@@ -4,7 +4,14 @@ Ver decisión en `decisions/2026-05-22-shopify-ecommerce.md` para el contexto de
 
 ## Estado actual
 
-**Estado:** En construcción (Mayo 2026)
+**Estado:** Catálogo cargado y publicado (Junio 2026)
+
+- Tienda: `naturchem-colombia.myshopify.com`
+- Dominio personalizado: `naturchemcolombia.com` (ya conectado)
+- **564 productos activos y publicados** en tienda online
+- API de gestión configurada via Shopify Partners app "Agente Claude"
+- Precios pendientes — todos en $0 hasta que el cliente provea lista
+- Imágenes pendientes
 
 ## Plan recomendado
 
@@ -18,9 +25,8 @@ Ver decisión en `decisions/2026-05-22-shopify-ecommerce.md` para el contexto de
 
 ## Dominio
 
-- **Recomendación:** `naturchem.co` (dominio colombiano, .co disponible)
-- Alternativa: `naturchem.com.co` o `naturchem.com`
-- [COMPLETAR — dominio elegido]
+- **Dominio activo:** `naturchemcolombia.com`
+- **Subdominio Shopify:** `naturchem-colombia.myshopify.com`
 
 ## Pasarelas de pago (Colombia)
 
@@ -36,10 +42,14 @@ Ver decisión en `decisions/2026-05-22-shopify-ecommerce.md` para el contexto de
 ## Integraciones prioritarias
 
 ### Fase 1 (lanzamiento)
+- [x] Catálogo cargado (564 productos)
+- [ ] Precios — lista de precios pendiente del cliente
+- [ ] Imágenes — fotografía profesional pendiente
+- [ ] Colecciones — organizar productos en colecciones visibles
+- [ ] Pasarela de pago colombiana (Wompi — pendiente del cliente)
+- [ ] WhatsApp Business (botón de contacto en producto)
 - [ ] Google Merchant Center → Google Shopping
 - [ ] Meta Business → Instagram Shopping + Facebook Shop
-- [ ] Pasarela de pago colombiana (Wompi)
-- [ ] WhatsApp Business (botón de contacto en producto)
 
 ### Fase 2 (crecimiento)
 - [ ] Mercado Libre (app oficial en Shopify App Store)

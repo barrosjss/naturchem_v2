@@ -1,59 +1,83 @@
 # Naturchem — Catálogo de Productos
 
-## Categorías principales
+## Estado del catálogo (Junio 2026)
 
-### 1. Ceras
+**564 productos activos en Shopify** — cargados y publicados el 2026-06-18/19 vía API.
+Fuente original: `PRODUCTO(Datos).csv` exportado del sistema contable.
 
-| Producto | Uso principal | Notas |
+## Categorías en Shopify
+
+| Categoría (Type) | Cantidad | Tag |
 |---|---|---|
-| **Cera de soja** | Velas artesanales | Alta demanda, tendencia "natural" |
-| **Cera de molde** | Velas con molde, figuras | Tutorial en producción (video Mar 2026) |
-| **Parafina** | Velas tradicionales, cosmética | Precio competitivo es diferencial clave |
+| Envases y Moldes | 272 | `envases-moldes` |
+| Fragancias | 92 | `fragancias` |
+| Colorantes | 48 | `colorantes` |
+| Aceites y Extractos | 40 | `aceites-extractos` |
+| Materias Primas | 36 | `materias-primas` |
+| Ingredientes | 29 | `ingredientes` |
+| Bases y Ceras | 24 | `bases-ceras` |
+| Insumos | 21 | `insumos` |
+| **Total** | **562** | *(+ 2 pre-existentes = 564)* |
 
-### 2. Glicerina
+## Subcategorías destacadas
 
-| Producto | Uso principal | Notas |
-|---|---|---|
-| **Glicerina vegetal** | Jabones, cremas, cosmética | "El mejor precio en glicerina" — mensaje clave |
+### Bases y Ceras
+- Bases glicerina (blanca, transparente, oliva, karite, leche cabra, aloe vera, coco, miel, carbon activado)
+- Ceras: soja (APF/BPF), palma, molde, vaso, parafina (semi/full refinada, gel), cera de abeja, microcristalina
+- Bases especiales: jabón virgen, brillo labial, Shikakai
 
-### 3. Ingredientes para jabones
+### Fragancias
+- Fragancias para jabón: lavanda, rosa, jazmin, vainilla, coco, frutas, especias (~50 variedades)
+- Fragancias para velas candle: línea específica con ~40 variedades
 
-- [COMPLETAR — listar variedades y presentaciones]
+### Aceites y Extractos
+- Aceites esenciales: lavanda, menta, eucalipto, romero, canela, árbol de té, cítricos, etc.
+- Aceites vegetales: almendras, jojoba, pepita uva, rosa mosqueta, aguacate, coco, girasol, oliva
+- Extractos: aloe vera, avena, arroz, calendula, quinua, cola de caballo, manzanilla, romero
 
-### 4. Bases para cremas y cosméticos
+### Colorantes
+- Polvos para jabón: 10+ colores
+- Polvos para vela: 8+ colores
+- Líquidos para jabón: 15+ colores
+- Líquidos para vela: 8+ colores
+- Micas
 
-- [COMPLETAR — emulsiones, aceites base, etc.]
+### Ingredientes
+- Arcillas (amarilla, roja, verde), carbón activado, colágeno, keratina, vitaminas (E, C)
+- Mantecas (karite, cacao), aceite de ricino, betaína
+- Flores y botánicos: lavanda, calendula, manzanilla, romero, rosas secas
+- Exfoliantes: semilla coco, durazno, guayaba, maracuyá, girasol
 
-### 5. Productos de aseo / limpieza
-
-- Ingredientes para creación de productos de limpieza artesanal
-- [COMPLETAR — listar]
-
-### 6. Línea Vitality
-
-- **Estado:** en lanzamiento (2026)
-- **Canal:** distribuidores en la Costa, alianzas con gimnasios en Barranquilla
-- **Descripción:** [COMPLETAR — productos de esta línea]
+### Envases y Moldes
+- Envases vidrio y plástico: múltiples capacidades (20ml – 1000ml)
+- Moldes silicona: +150 diseños (flores, animales, figuras navideñas, geométricos)
+- Tarros para velas, tubos kraft, frascos ámbar
+- Insumos: mechas, portamechas, termómetros, básculas, jarras
 
 ---
 
-## Presentaciones y formatos
+## Pendientes del catálogo
 
-[COMPLETAR — tamaños disponibles (kilos, litros), presentaciones para mayoreo y menudeo]
-
-## Precios de referencia
-
-[COMPLETAR — rangos de precios, política de descuentos por volumen]
-
-## Productos de mayor rotación
-
-1. Glicerina (alta demanda, precio = diferencial)
-2. Cera de soja (tendencia artesanal en auge)
-3. Parafina (velas clásicas)
-4. [COMPLETAR]
+- [ ] **Precios** — todos en $0, requieren actualización masiva
+- [ ] **Imágenes** — sin fotos aún (ver portafolio digital abajo)
+- [ ] **Colecciones** — crear colecciones en Shopify y asignar productos
+- [ ] **Descripciones** — actualmente vacías, duplican el nombre
+- [ ] **Variantes** — algunos productos se venden en múltiples tamaños/pesos
 
 ## Portafolio digital
 
 - Propuesta fotografía profesional: 50 productos fotografiados ($1,600,000 COP)
 - Formatos requeridos: JPG alta resolución, PNG sin fondo, WebP optimizado
 - Estándar marketplace: fondo blanco puro + 2 fotos con contexto
+
+## Productos de mayor rotación
+
+1. Glicerina (alta demanda, precio = diferencial)
+2. Cera de soja (tendencia artesanal en auge)
+3. Parafina (velas clásicas)
+4. Bases glicerina especiales (karite, aloe, coco)
+5. [COMPLETAR — confirmar con ventas reales]
+
+## Precios
+
+[COMPLETAR — el cliente debe proveer lista de precios por producto/categoría]
