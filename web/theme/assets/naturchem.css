@@ -254,28 +254,7 @@ select:focus {
   }
 }
 
-/* ── Section animations on scroll ────────────────────────── */
-@media (prefers-reduced-motion: no-preference) {
-  .shopify-section {
-    animation: natFadeUp 0.6s var(--nat-transition-slow) both;
-    animation-play-state: paused;
-  }
-
-  .shopify-section.is-visible {
-    animation-play-state: running;
-  }
-}
-
-@keyframes natFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* scroll animations removed */
 
 /* ── Product page ─────────────────────────────────────────── */
 .product__info-container .price {
